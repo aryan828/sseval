@@ -115,7 +115,7 @@ void write_text(int i) {
     int operand = in_symtab(lines[i].operand);
     operand = operand == -1 ? 0 : operand;
     FILE *fp = fopen(OutputFile, "a");
-    fprintf(fp, "T %06X %02X%04X\n", lines[i].address, opcode, operand);
+    fprintf(fp, "T %06X 03 %02X%04X\n", lines[i].address, opcode, operand);
     fclose(fp);
 }
 
